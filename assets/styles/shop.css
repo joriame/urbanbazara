@@ -20,12 +20,9 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, serif;
   background-color: #f9fafc;
   overflow-x: hidden;
-  opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-body.loaded {
-  opacity: 1;
-}
+
 
 .header {
   width: 100%;

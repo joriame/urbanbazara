@@ -54,9 +54,6 @@ document.querySelectorAll(".image-slider").forEach((slider) => {
   });
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("loaded");
-});
 
 // Описание,Спецификации,Уход,Отзывы,FAQ
 function toggleBlock(blockId) {
