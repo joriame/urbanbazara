@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Playfair";
-  src: url("/assets/fonts/PlayfairDisplay.ttf");
+  src: url("../fonts/PlayfairDisplay.ttf");
 }
 html {
   overflow-x: hidden;
@@ -186,7 +186,7 @@ body.loaded {
 /* Стилизация баннера */
 .banner {
   width: 100%;
-  background: url(/assets/images/banner.png) no-repeat center center / cover;
+  background: url(../images/banner.png) no-repeat center center / cover;
   height: 85vh;
   display: flex;
   justify-content: center;
