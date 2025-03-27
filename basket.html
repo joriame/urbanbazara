@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/basket.css" />
+    <title>Корзина</title>
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">urbanbazara</h1>
+        <!-- Навигационное меню -->
+        <nav class="menu">
+          <a draggable="false" href="index.html" class="menu-link">Главная</a>
+          <a draggable="false" href="shop.html" class="menu-link">Каталог</a>
+          <a draggable="false" href="about.html" class="menu-link">О нас</a>
+          <a draggable="false" href="contacts.html" class="menu-link">Контакты</a>
+        </nav>
+
+        <!-- Иконки -->
+        <div class="icons-menu">
+          <!-- Иконка избранное -->
+          <a draggable="false" href="favourite.html" class="icon-link">
+            <img
+              draggable="false"
+              src="assets/icons/favourite.svg"
+              alt="Избранное"
+          /></a>
+          <!-- Иконка корзина -->
+          <a draggable="false" href="" class="icon-link">
+            <img draggable="false" src="assets/icons/basket.svg" alt="Корзина"
+          /></a>
+          <!-- Иконка профиль -->
+          <a draggable="false" href="auth.html" class="icon-link">
+            <img draggable="false" src="assets/icons/profile.svg" alt="Профиль"
+          /></a>
+        </div>
+        <!-- Бургер меню -->
+        <div class="burger" id="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+    <nav class="menu-mobile" id="menu-mobile">
+      <a href="index.html" class="menu-mobile-link">Главная</a>
+      <a href="shop.html" class="menu-mobile-link">Каталог</a>
+      <a href="about.html" class="menu-mobile-link">О нас</a>
+      <a href="contacts.html" class="menu-mobile-link">Контакты</a>
+      <a href="favourite.html" class="menu-mobile-link">Избранное</a>
+      <a href="basket.html" class="menu-mobile-link">Корзина</a>
+      <a href="auth.html" class="menu-mobile-link">Профиль</a>
+    </nav>
+    <!-- Блок корзины -->
+    <section class="basket">
+      <div class="basket-container">
+        <h2 class="basket-title">Корзина</h2>
+        <div class="basket-blocks">
+          <div class="cards">
+            <div class="order-card">
+              <div class="order-main-info">
+                <div class="card-img">
+                  <img
+                    draggable="false"
+                    src="/assets/images/image1-card1.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="order-info">
+                  <h3 class="info-title">Аляска N-2B Altitude</h3>
+                  <p class="info-price">$587.99</p>
+                  <div class="order-btns">
+                    <button draggable="false" class="minus">
+                      <img src="/assets/icons/ic_baseline-minus.svg" alt="" />
+                    </button>
+                    <span class="order-count">1</span>
+                    <button class="plus">
+                      <img
+                        draggable="false"
+                        src="assets/icons/ic_baseline-plus.svg"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button draggable="false" class="cross-btn">
+                <img
+                  class="cross"
+                  src="/assets/icons/gridicons_cross.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+            <div class="order-card">
+              <div class="order-main-info">
+                <div class="card-img">
+                  <img
+                    draggable="false"
+                    src="/assets/images/image1-card3.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="order-info">
+                  <h3 class="info-title">Куртка M-43 Mod Field Jacket</h3>
+                  <p class="info-price">$587.99</p>
+                  <div class="order-btns">
+                    <button class="minus">
+                      <img
+                        draggable="false"
+                        src="/assets/icons/ic_baseline-minus.svg"
+                        alt=""
+                      />
+                    </button>
+                    <span class="order-count">1</span>
+                    <button class="plus">
+                      <img
+                        draggable="false"
+                        src="assets/icons/ic_baseline-plus.svg"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="cross-btn">
+                <img
+                  draggable="false"
+                  class="cross"
+                  src="/assets/icons/gridicons_cross.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+            <div class="order-card">
+              <div class="order-main-info">
+                <div class="card-img">
+                  <img
+                    draggable="false"
+                    src="/assets/images/image1-card2.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="order-info">
+                  <h3 class="info-title">Бомбер Alpha Industries</h3>
+                  <p class="info-price">$587.99</p>
+                  <div class="order-btns">
+                    <button class="minus">
+                      <img
+                        draggable="false"
+                        src="/assets/icons/ic_baseline-minus.svg"
+                        alt=""
+                      />
+                    </button>
+                    <span class="order-count">1</span>
+                    <button class="plus">
+                      <img src="assets/icons/ic_baseline-plus.svg" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="cross-btn">
+                <img
+                  class="cross"
+                  src="/assets/icons/gridicons_cross.svg"
+                  alt=""
+                  draggable="false"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="summary-price">
+            <h2 class="price-title">Итог заказа</h2>
+            <div class="price">
+              <p class="price-txt">Цена</p>
+              <p class="price-txt">$499.98</p>
+            </div>
+            <div class="delivery">
+              <p class="delivery-txt">Доставка</p>
+              <p class="delivery-txt">Бесплатно</p>
+            </div>
+            <div class="line"></div>
+            <div class="summary">
+              <p class="summary-txt">Итого</p>
+              <p class="summary-txt">$499.98</p>
+            </div>
+            <button class="order-action">Оформить заказ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h3 class="footer-logo-head">URBANBAZARA</h3>
+          <p class="footer-logo-slogan">
+            Ваш лучший магазин стильных и качественных курток.
+          </p>
+        </div>
+
+        <div class="fast-links">
+          <h3 class="fast-link-head">Быстрые ссылки</h3>
+          <a draggable="false" class="fast-link" href="index.html">Главная</a>
+          <a draggable="false" class="fast-link" href="shop.html">Магазин</a>
+          <a draggable="false" class="fast-link" href="about.html">О нас</a>
+          <a draggable="false" class="fast-link" href="contacts.html">Контакты</a>
+        </div>
+
+        <div class="services-links">
+          <h3 class="service-link-head">Обслуживание</h3>
+          <a draggable="false" class="service-link" href="shipping.html">Информация о доставке</a>
+          <a draggable="false" class="service-link" href="return.html">Возврат</a>
+          <a draggable="false" class="service-link" href="size-guide.html">Руководство по размерам</a>
+        </div>
+
+        <div class="social-links">
+          <h3 class="social-link-head">Мы в соцсетях</h3>
+          <div class="social-icons">
+            <a draggable="false" href="https://facebook.com" class="social-link">
+              <img draggable="false" src="assets/icons/facebook.svg" alt="facebook" />
+            </a>
+            <a draggable="false" href="https://x.com" class="social-link">
+              <img draggable="false" src="assets/icons/twitter.svg" alt="twitter" />
+            </a>
+            <a draggable="false" href="https://instagram.com" class="social-link">
+              <img draggable="false" src="assets/icons/mdi_instagram.svg" alt="instagram" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 URBANBAZARA. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

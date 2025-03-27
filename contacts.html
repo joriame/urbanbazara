@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles/contacts.css" />
+  <title>Связь с нами</title>
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">urbanbazara</h1>
+      <!-- Навигационное меню -->
+      <nav class="menu">
+        <a draggable="false" href="index.html" class="menu-link">Главная</a>
+        <a draggable="false" href="shop.html" class="menu-link">Магазин</a>
+        <a draggable="false" href="about.html" class="menu-link">О нас</a>
+        <a draggable="false" href="contacts.html" class="menu-link">Контакты</a>
+      </nav>
+
+      <!-- Иконки -->
+      <div class="icons-menu">
+        <!-- Иконка избранное -->
+        <a draggable="false" href="favourite.html" class="icon-link">
+          <img draggable="false" src="assets/icons/favourite.svg" alt="Избранное" /></a>
+        <!-- Иконка корзина -->
+        <a draggable="false" href="basket.html" class="icon-link">
+          <img draggable="false" src="assets/icons/basket.svg" alt="Корзина" /></a>
+        <!-- Иконка профиль -->
+        <a draggable="false" href="auth.html" class="icon-link">
+          <img draggable="false" src="assets/icons/profile.svg" alt="Профиль" /></a>
+      </div>
+      <!-- Бургер меню -->
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <nav class="menu-mobile" id="menu-mobile">
+    <a href="index.html" class="menu-mobile-link">Главная</a>
+    <a href="shop.html" class="menu-mobile-link">Каталог</a>
+    <a href="about.html" class="menu-mobile-link">О нас</a>
+    <a href="contacts.html" class="menu-mobile-link">Контакты</a>
+    <a href="favourite.html" class="menu-mobile-link">Избранное</a>
+    <a href="basket.html" class="menu-mobile-link">Корзина</a>
+    <a href="auth.html" class="menu-mobile-link">Профиль</a>
+  </nav>
+  <!-- Блок связь с нами -->
+  <section class="contacts">
+    <h2 class="contacts-title">Связь с нами</h2>
+    <div class="contacts-container">
+      <div class="contacts-left">
+        <h2 class="left-title">Связаться с нами</h2>
+        <!-- ----------------------------- -->
+        <div class="email-container">
+          <img src="/assets/icons/lets-icons_message-light.svg" alt="">
+          <div class="info">
+            <h2 class="info-title">Электронная почта</h2>
+            <a class="info-text" draggable="false" href="mailto:support@urbanazara.com">support@urbanazara.com</a>
+          </div>
+        </div>
+        <!-- ------------------------ -->
+        <div class="phone-container">
+          <img src="/assets/icons/line-md_phone.svg" alt="">
+          <div class="info">
+            <h2 class="info-title">Телефон</h2>
+            <a class="info-text" draggable="false" href="tel:12345678900">+1(234)567-89-00</a>
+          </div>
+        </div>
+        <!-- ------------------------ -->
+        <div class="map-container">
+          <img src="/assets/icons/bx_map.svg" alt="">
+          <div class="info">
+            <h2 class="info-title">Адрес</h2>
+            <a class="info-text" draggable="false" href="https://yandex.ru/maps/-/CHujE4YA">23 Модная улица Москва, 101000 Россия</a>
+          </div>
+        </div>
+        <!-- -------------- -->
+      </div>
+      <div class="contacts-right">
+        <h2 class="right-title">Отправьте нам сообщение</h2>
+        <form>
+          <label class="label name-label" for="name">Имя
+            <input required type="text" name="name" class="name-input" />
+          </label>
+          <label for="email" class="label email-label">Email
+            <input required class="email-input" type="email" name="email" />
+          </label>
+          <label for="theme" class="label theme-label">Тема
+            <input required type="text" name="theme" class="theme-input" /> </label><label class="label"
+            for="message">Сообщение
+            <textarea required name="message" class="message-input"></textarea>
+          </label>
+          <button type="submit" class="send-btn">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3 class="footer-logo-head">URBANBAZARA</h3>
+        <p class="footer-logo-slogan">
+          Ваш лучший магазин стильных и качественных курток.
+        </p>
+      </div>
+
+      <div class="fast-links">
+        <h3 class="fast-link-head">Быстрые ссылки</h3>
+        <a draggable="false" class="fast-link" href="index.html">Главная</a>
+        <a draggable="false" class="fast-link" href="shop.html">Магазин</a>
+        <a draggable="false" class="fast-link" href="about.html">О нас</a>
+        <a draggable="false" class="fast-link" href="contacts.html">Контакты</a>
+      </div>
+
+      <div class="services-links">
+        <h3 class="service-link-head">Обслуживание</h3>
+        <a draggable="false" class="service-link" href="shipping.html">Информация о доставке</a>
+        <a draggable="false" class="service-link" href="return.html">Возврат</a>
+        <a draggable="false" class="service-link" href="size-guide.html">Руководство по размерам</a>
+      </div>
+
+      <div class="social-links">
+        <h3 class="social-link-head">Мы в соцсетях</h3>
+        <div class="social-icons">
+          <a draggable="false" href="https://facebook.com" class="social-link">
+            <img draggable="false" src="assets/icons/facebook.svg" alt="facebook" />
+          </a>
+          <a draggable="false" href="https://x.com" class="social-link">
+            <img draggable="false" src="assets/icons/twitter.svg" alt="twitter" />
+          </a>
+          <a draggable="false" href="https://instagram.com" class="social-link">
+            <img draggable="false" src="assets/icons/mdi_instagram.svg" alt="instagram" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 URBANBAZARA. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

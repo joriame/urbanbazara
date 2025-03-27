@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles/shop.css" />
+  <title>Каталог</title>
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">urbanbazara</h1>
+      <!-- Навигационное меню -->
+      <nav class="menu">
+        <a draggable="false" href="index.html" class="menu-link">Главная</a>
+        <a draggable="false" href="shop.html" class="menu-link">Каталог</a>
+        <a draggable="false" href="about.html" class="menu-link">О нас</a>
+        <a draggable="false" href="contacts.html" class="menu-link">Контакты</a>
+      </nav>
+
+      <!-- Иконки -->
+      <div class="icons-menu">
+        <!-- Иконка избранное -->
+        <a draggable="false" href="favourite.html" class="icon-link">
+          <img draggable="false" src="assets/icons/favourite.svg" alt="Избранное" /></a>
+        <!-- Иконка корзина -->
+        <a draggable="false" href="basket.html" class="icon-link">
+          <img draggable="false" src="assets/icons/basket.svg" alt="Корзина" /></a>
+        <!-- Иконка профиль -->
+        <a draggable="false" href="auth.html" class="icon-link">
+          <img draggable="false" src="assets/icons/profile.svg" alt="Профиль" /></a>
+      </div>
+      <!-- Бургер меню -->
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <nav class="menu-mobile" id="menu-mobile">
+    <a href="index.html" class="menu-mobile-link">Главная</a>
+    <a href="shop.html" class="menu-mobile-link">Каталог</a>
+    <a href="about.html" class="menu-mobile-link">О нас</a>
+    <a href="contacts.html" class="menu-mobile-link">Контакты</a>
+    <a href="favourite.html" class="menu-mobile-link">Избранное</a>
+    <a href="basket.html" class="menu-mobile-link">Корзина</a>
+    <a href="auth.html" class="menu-mobile-link">Профиль</a>
+  </nav>
+  <section class="main">
+    <div class="main-container">
+      <div class="search-block">
+        <form class="search-form">
+          <svg class="search-img" width="20" height="20" viewBox="0 0 30 30" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M26.25 26.25L20.8213 20.8213M20.8213 20.8213C21.7499 19.8927 22.4865 18.7902 22.989 17.5769C23.4916 16.3637 23.7503 15.0633 23.7503 13.75C23.7503 12.4368 23.4916 11.1364 22.989 9.92308C22.4865 8.70979 21.7499 7.60737 20.8213 6.67876C19.8927 5.75015 18.7902 5.01354 17.5769 4.51098C16.3637 4.00842 15.0633 3.74976 13.75 3.74976C12.4368 3.74976 11.1364 4.00842 9.92308 4.51098C8.70979 5.01354 7.60737 5.75015 6.67876 6.67876C4.80335 8.55418 3.74976 11.0978 3.74976 13.75C3.74976 16.4022 4.80335 18.9459 6.67876 20.8213C8.55418 22.6967 11.0978 23.7503 13.75 23.7503C16.4022 23.7503 18.9459 22.6967 20.8213 20.8213Z"
+              stroke="#b4b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+          </svg>
+          <input class="search-input" type="text" placeholder="Поиск курток...">
+        </form>
+      </div>
+      <div class="product-filter-block">
+        <div class="filter-sort-block">
+          <div class="filter-block">
+            <img src="/assets/icons/mdi_mixer-settings-vertical.svg" alt="filter">
+            <p class="filter-title">Фильтры</p>
+          </div>
+          <script>document.addEventListener("DOMContentLoaded", function () {
+              const filterBlock = document.querySelector(".filter-block");
+              const filterSortBlock = document.querySelector(".filter-sort-block-none");
+
+
+              filterSortBlock.style.display = "none";
+
+              filterBlock.addEventListener("click", function () {
+                if (filterSortBlock.style.display === "none") {
+                  filterSortBlock.style.display = "flex";
+                } else {
+                  filterSortBlock.style.display = "none";
+                }
+              });
+            });</script>
+          <div class="sort-block">
+            <p class="filter-block-title">Сортировать по:</p>
+            <select id="sortSelect">
+              <option class="option-text" value="2">По умолчанию</option>
+              <option class="option-text" value="1">Цена: по убыванию</option>
+              <option class="option-text" value="3">Цена: по возрастанию</option>
+              <option class="option-text" value="4">Рейтинг</option>
+            </select>
+          </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              const container = document.querySelector('.cards-container');
+              const cards = Array.from(container.children);
+              const originalOrder = [...cards];
+
+              const getPriceAndRating = (card) => {
+                const priceText = card.querySelector('.card-price').textContent.replace('$', '');
+                const ratingText = card.querySelector('.review-text').textContent.split(' ')[0];
+                return {
+                  price: parseFloat(priceText),
+                  rating: parseFloat(ratingText)
+                };
+              };
+
+              document.getElementById('sortSelect').addEventListener('change', function () {
+                const sortValue = this.value;
+
+                if (sortValue === '2') {
+
+                  originalOrder.forEach(card => container.appendChild(card));
+                  return;
+                }
+
+                cards.sort((a, b) => {
+                  const aData = getPriceAndRating(a);
+                  const bData = getPriceAndRating(b);
+
+                  if (sortValue === '1') {
+                    return bData.price - aData.price;
+                  } else if (sortValue === '3') {
+                    return aData.price - bData.price;
+                  } else if (sortValue === '4') {
+                    return bData.rating - aData.rating;
+                  }
+                  return 0;
+                });
+
+
+                cards.forEach(card => container.appendChild(card));
+              });
+            });
+          </script>
+        </div>
+        <div class="filter-sort-block-none active">
+          <div class="block">
+            <h3 class="block-title">Ценовой диапазон</h3>
+            <label class="price-amount"> До 100$
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> $100 - $200
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> $200 - $300
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> Более $300
+              <input class="checkbox" type="checkbox">
+            </label>
+          </div>
+          <div class="block">
+            <h3 class="block-title">Категории</h3>
+            <label class="price-amount"> Кожаные куртки
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> Джинсовые куртки
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> Зимние пальто
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> Куртки-бомберы
+              <input class="checkbox" type="checkbox">
+            </label>
+          </div>
+          <div class="block">
+            <h3 class="block-title">Рейтинг</h3>
+            <label class="price-amount"> 4+ звезды
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> 3+ звезды
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> 2+ звезды
+              <input class="checkbox" type="checkbox">
+            </label>
+            <label class="price-amount"> 1+ звезд
+              <input class="checkbox" type="checkbox">
+            </label>
+          </div>
+        </div>
+        <div class="cards-container">
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card1.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card1.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card1.webp" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card1.jpg" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Аляска N-2B Altitude</h1>
+              <div class="price-and-review">
+                <p class="card-price">$587.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.5 <span> (128)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card2.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card2.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card2.webp" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card2.webp" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Бомбер Alpha Industries</h1>
+              <div class="price-and-review">
+                <p class="card-price">$299.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.9 <span> (548)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card3.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card3.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card3.jpg" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card3.jpg" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Куртка M-43 Mod Field Jacket</h1>
+              <div class="price-and-review">
+                <p class="card-price">$299.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.2 <span> (48)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card3.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card3.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card3.jpg" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card3.jpg" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Куртка M-43 Mod Field Jacket</h1>
+              <div class="price-and-review">
+                <p class="card-price">$587.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.2 <span> (48)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card2.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card2.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card2.webp" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card2.webp" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Бомбер Alpha Industries</h1>
+              <div class="price-and-review">
+                <p class="card-price">$299.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.9 <span> (548)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card1.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card1.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card1.webp" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card1.jpg" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Аляска N-2B Altitude</h1>
+              <div class="price-and-review">
+                <p class="card-price">$587.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.5 <span> (128)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card1.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card1.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card1.webp" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card1.jpg" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Аляска N-2B Altitude</h1>
+              <div class="price-and-review">
+                <p class="card-price">$587.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.5 <span> (128)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card3.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card3.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card3.jpg" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card3.jpg" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Куртка M-43 Mod Field Jacket</h1>
+              <div class="price-and-review">
+                <p class="card-price">$587.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.2 <span> (48)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card2.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card2.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card2.webp" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card2.webp" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Бомбер Alpha Industries</h1>
+              <div class="price-and-review">
+                <p class="card-price">$299.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.9 <span> (548)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card2.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card2.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card2.webp" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card2.webp" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Бомбер Alpha Industries</h1>
+              <div class="price-and-review">
+                <p class="card-price">$299.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.9 <span> (548)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card3.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card3.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card3.jpg" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card3.jpg" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Куртка M-43 Mod Field Jacket</h1>
+              <div class="price-and-review">
+                <p class="card-price">$587.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.2 <span> (48)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+          <div class="arrivals-card">
+            <div class="image-slider">
+              <img class="card-image active" src="assets/images/image1-card1.jpg" alt="1" draggable="false" />
+              <img class="card-image" src="assets/images/image2-card1.webp" alt="2" draggable="false" />
+              <img class="card-image" src="assets/images/image3-card1.webp" alt="3" draggable="false" />
+              <img class="card-image" src="assets/images/image4-card1.jpg" alt="4" draggable="false" />
+            </div>
+            <div class="card-txt-price">
+              <h1 class="card-title">Аляска N-2B Altitude</h1>
+              <div class="price-and-review">
+                <p class="card-price">$587.99</p>
+                <div class="review-text-block">
+                  <img src="/assets/icons/star-small.svg" alt="star">
+                  <p class="review-text">4.5 <span> (128)</span></p>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.location.href='product-card.html'" class="cart-btn">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3 class="footer-logo-head">URBANBAZARA</h3>
+        <p class="footer-logo-slogan">
+          Ваш лучший магазин стильных и качественных курток.
+        </p>
+      </div>
+
+      <div class="fast-links">
+        <h3 class="fast-link-head">Быстрые ссылки</h3>
+        <a draggable="false" class="fast-link" href="index.html">Главная</a>
+        <a draggable="false" class="fast-link" href="shop.html">Магазин</a>
+        <a draggable="false" class="fast-link" href="about.html">О нас</a>
+        <a draggable="false" class="fast-link" href="contacts.html">Контакты</a>
+      </div>
+
+      <div class="services-links">
+        <h3 class="service-link-head">Обслуживание</h3>
+        <a draggable="false" class="service-link" href="shipping.html">Информация о доставке</a>
+        <a draggable="false" class="service-link" href="return.html">Возврат</a>
+        <a draggable="false" class="service-link" href="size-guide.html">Руководство по размерам</a>
+      </div>
+
+      <div class="social-links">
+        <h3 class="social-link-head">Мы в соцсетях</h3>
+        <div class="social-icons">
+          <a draggable="false" href="https://facebook.com" class="social-link">
+            <img draggable="false" src="assets/icons/facebook.svg" alt="facebook" />
+          </a>
+          <a draggable="false" href="https://x.com" class="social-link">
+            <img draggable="false" src="assets/icons/twitter.svg" alt="twitter" />
+          </a>
+          <a draggable="false" href="https://instagram.com" class="social-link">
+            <img draggable="false" src="assets/icons/mdi_instagram.svg" alt="instagram" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 URBANBAZARA. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

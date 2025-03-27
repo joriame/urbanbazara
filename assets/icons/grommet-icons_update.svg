@@ -1,0 +1,14 @@
+<svg width="53.339966" height="48.059998" viewBox="0 0 53.34 48.06" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip13_174">
+			<rect id="grommet-icons:update" rx="0.000000" width="52.340000" height="47.060001" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="grommet-icons:update" rx="0.000000" width="52.340000" height="47.060001" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip13_174)">
+		<path id="Vector" d="M3.88 32.04C7.45 40.24 16.3 46.05 26.67 46.05C40.17 46.05 51.11 36.19 51.11 24.03M49.45 16.01C45.89 7.81 37.03 2 26.67 2C13.16 2 2.22 11.86 2.22 24.03M20 32.04L2.22 32.04L2.22 48.06M51.11 0L51.11 16.02L33.33 16.02" stroke="#000000" stroke-opacity="1.000000" stroke-width="2.000000"/>
+	</g>
+</svg>

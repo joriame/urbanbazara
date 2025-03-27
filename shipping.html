@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles/shipping.css" />
+  <title>Информация о доставке</title>
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">urbanbazara</h1>
+      <!-- Навигационное меню -->
+      <nav class="menu">
+        <a draggable="false" href="index.html" class="menu-link">Главная</a>
+        <a draggable="false" href="shop.html" class="menu-link">Каталог</a>
+        <a draggable="false" href="about.html" class="menu-link">О нас</a>
+        <a draggable="false" href="contacts.html" class="menu-link">Контакты</a>
+      </nav>
+
+      <!-- Иконки -->
+      <div class="icons-menu">
+        <!-- Иконка избранное -->
+        <a draggable="false" href="favourite.html" class="icon-link">
+          <img draggable="false" src="assets/icons/favourite.svg" alt="Избранное" /></a>
+        <!-- Иконка корзина -->
+        <a draggable="false" href="basket.html" class="icon-link">
+          <img draggable="false" src="assets/icons/basket.svg" alt="Корзина" /></a>
+        <!-- Иконка профиль -->
+        <a draggable="false" href="auth.html" class="icon-link">
+          <img draggable="false" src="assets/icons/profile.svg" alt="Профиль" /></a>
+      </div>
+      <!-- Бургер меню -->
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <nav class="menu-mobile" id="menu-mobile">
+    <a href="index.html" class="menu-mobile-link">Главная</a>
+    <a href="shop.html" class="menu-mobile-link">Каталог</a>
+    <a href="about.html" class="menu-mobile-link">О нас</a>
+    <a href="contacts.html" class="menu-mobile-link">Контакты</a>
+    <a href="favourite.html" class="menu-mobile-link">Избранное</a>
+    <a href="basket.html" class="menu-mobile-link">Корзина</a>
+    <a href="auth.html" class="menu-mobile-link">Профиль</a>
+  </nav>
+
+  <!-- Блок доставки -->
+  <section class="shipping">
+    <div class="shipping-section">
+      <h1 class="shipping-head-title">Информация о доставке</h1>
+      <p class="shipping-head-text">Все, что вам нужно знать о наших правилах доставки и вариантах доставки. </p>
+      <div class="shipping-container">
+        <div class="shipping-block">
+          <div class="shipping-title-block">
+            <img src="/assets/icons/delivery-icon.svg" alt="icon">
+            <h1 class="shipping-title">Варианты доставки</h1>
+          </div>
+          <div class="card-block">
+            <div class="card">
+              <h2 class="card-title">Стандартная доставка</h2>
+              <p class="day-count">3-5 рабочих дней</p>
+              <p class="price">$5.99 (Бесплатно при заказе на сумму более $100)</p>
+              <p class="availability">Доступна для всех адресов внутри страны</p>
+
+            </div>
+            <div class="card">
+              <h2 class="card-title">Экспресс-доставка</h2>
+              <p class="day-count">1-2 рабочих дней</p>
+              <p class="price">$12.99</p>
+              <p class="availability">Доступно для большинства городских районов</p>
+
+            </div>
+            <div class="card">
+              <h2 class="card-title">Доставка на следующий день</h2>
+              <p class="day-count">На следующий рабочий день</p>
+              <p class="price">$19.99</p>
+              <p class="availability">Оформите заказ до 14:00, чтобы получить его на следующий день</p>
+
+            </div>
+            <div class="card">
+              <h2 class="card-title">Международная доставка</h2>
+              <p class="day-count">7-14 рабочих дней</p>
+              <p class="price">От $24.99</p>
+              <p class="availability">Доступна для некоторых стран</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="shipping-block">
+          <div class="shipping-title-block">
+            <img src="/assets/icons/mingcute_time-line.svg" alt="icon">
+            <h1 class="shipping-title">Время обработки заказа</h1>
+          </div>
+          <p class="shipping-text">Все заказы обрабатываются в течение 1-2 рабочих дней после подтверждения
+            оплаты.Заказы, оформленные в выходные и праздничные дни, будут обработаны в ближайший рабочий день.В периоды
+            высокой нагрузки (распродажи, праздники) обработка может занять дополнительно 1-2 дня.</p>
+        </div>
+
+        <div class="shipping-block">
+          <div class="shipping-title-block">
+            <img src="/assets/icons/tabler_world.svg" alt="icon">
+            <h1 class="shipping-title">Международная доставка</h1>
+          </div>
+          <p class="shipping-text">Мы осуществляем доставку в большинство стран мира. Сроки международной доставки
+            варьируются в зависимости от страны назначения, таможенного оформления и местных служб доставки.</p>
+        </div>
+
+        <div class="shipping-block">
+          <div class="shipping-title-block">
+            <img src="/assets/icons/box-icon.svg" alt="icon">
+            <h1 class="shipping-title">Отслеживание заказов</h1>
+          </div>
+          <p class="shipping-text">Как только ваш заказ будет отправлен, вы получите электронное письмо с подтверждением
+            с номером отслеживания и ссылкой. Вы можете отслеживать статус своей посылки в любое время следующим
+            образом:</p>
+          <ul class="shipping-list">
+            <li class="shipping-list-text">В личном кабинете (раздел "История заказов")</li>
+            <li class="shipping-list-text">По ссылке из письма с подтверждением доставки</li>
+            <li class="shipping-list-text">Через нашу службу поддержки (укажите номер заказа)</li>
+          </ul>
+          <p class="shipping-text">Обратите внимание, что информация об отслеживании обновляется в течение 24-48 часов
+            после отправки.</p>
+        </div>
+
+        <div class="shipping-block">
+          <div class="shipping-title-block">
+            <img src="/assets/icons/cuida_shield-tick-outline.svg" alt="icon">
+            <h1 class="shipping-title">Гарантия на доставку</h1>
+          </div>
+          <p class="shipping-text">Все заказы автоматически страхуются от потери или повреждения во время
+            транспортировки. Если ваша посылка пришла поврежденной или не была доставлена, свяжитесь с нами в течение 7
+            дней с даты предполагаемой доставки.Чтобы подать претензию, вам необходимо предоставить:
+          <ul class="shipping-list">
+            <li class="shipping-list-text">Номер вашего заказа</li>
+            <li class="shipping-list-text">Фотографии поврежденной упаковки и/или предметов (если применимо)</li>
+            <li class="shipping-list-text">Описание проблемы</li>
+          </ul>
+          </p>
+        </div>
+        <div class="shipping-block last">
+          <div class="shipping-title-block">
+            <img src="/assets/icons/octicon_question-16.svg" alt="icon">
+            <h1 class="shipping-title">Часто задаваемые вопросы</h1>
+          </div>
+        
+          <div class="shipping-item">
+            <h2 class="shipping-title">Могу ли я изменить адрес доставки после оформления заказа?</h2>
+            <p class="shipping-text">
+              Изменение адреса может быть осуществлено только в том случае, если заказ еще не обработан. 
+              Пожалуйста, немедленно свяжитесь со службой поддержки, если вам нужно изменить адрес доставки.
+            </p>
+          </div>
+        
+          <div class="shipping-item">
+            <h2 class="shipping-title">Что делать, если меня не было дома при доставке?</h2>
+            <p class="shipping-text">
+              При стандартной доставке курьер может оставить посылку у двери или у соседей. 
+              Если требуется подпись, будет оставлено уведомление с инструкциями для повторной доставки или самовывоза.
+            </p>
+          </div>
+        
+          <div class="shipping-item">
+            <h2 class="shipping-title">Отправляете ли вы на абонентские ящики?</h2>
+            <p class="shipping-text">
+              Да, мы можем доставить в абонентские ящики только для стандартной доставки. 
+              Для экспресс-доставки и доставки на следующий день требуется физический адрес.
+            </p>
+          </div>
+        
+          <div class="shipping-item">
+            <h2 class="shipping-title">Как сообщить о пропаже или задержке посылки?</h2>
+            <p class="shipping-text">
+              Если статус отслеживания показывает "доставлено", но посылка не у вас, или если она задерживается, 
+              свяжитесь с нашей поддержкой, указав номер заказа. Мы разберемся!
+            </p>
+          </div>
+        </div>
+        <div class="additional-help">
+          <h1 class="additional-help-title">Нужна дополнительная помощь?</h1>
+          <p class="additional-help-text">Наша служба поддержки клиентов готова помочь вам с любыми вопросами или проблемами, связанными с доставкой.</p>
+          <div class="additional-btns">
+            <a href="contacts.html" class="additional-btn contact-btn">Свяжитесь с нами</a>
+            <a href="contacts.html" class="additional-btn chat-btn">Чат</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3 class="footer-logo-head">URBANBAZARA</h3>
+        <p class="footer-logo-slogan">
+          Ваш лучший магазин стильных и качественных курток.
+        </p>
+      </div>
+
+      <div class="fast-links">
+        <h3 class="fast-link-head">Быстрые ссылки</h3>
+        <a draggable="false" class="fast-link" href="index.html">Главная</a>
+        <a draggable="false" class="fast-link" href="shop.html">Магазин</a>
+        <a draggable="false" class="fast-link" href="about.html">О нас</a>
+        <a draggable="false" class="fast-link" href="contacts.html">Контакты</a>
+      </div>
+
+      <div class="services-links">
+        <h3 class="service-link-head">Обслуживание</h3>
+        <a draggable="false" class="service-link" href="shipping.html">Информация о доставке</a>
+        <a draggable="false" class="service-link" href="return.html">Возврат</a>
+        <a draggable="false" class="service-link" href="size-guide.html">Руководство по размерам</a>
+      </div>
+
+      <div class="social-links">
+        <h3 class="social-link-head">Мы в соцсетях</h3>
+        <div class="social-icons">
+          <a draggable="false" href="https://facebook.com" class="social-link">
+            <img draggable="false" src="assets/icons/facebook.svg" alt="facebook" />
+          </a>
+          <a draggable="false" href="https://x.com" class="social-link">
+            <img draggable="false" src="assets/icons/twitter.svg" alt="twitter" />
+          </a>
+          <a draggable="false" href="https://instagram.com" class="social-link">
+            <img draggable="false" src="assets/icons/mdi_instagram.svg" alt="instagram" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 URBANBAZARA. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

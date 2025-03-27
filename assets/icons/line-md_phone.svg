@@ -1,0 +1,14 @@
+<svg width="33.000000" height="27.000000" viewBox="0 0 33 27" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip70_146">
+			<rect id="line-md:phone" rx="0.000000" width="32.000000" height="26.000000" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="line-md:phone" rx="0.000000" width="32.000000" height="26.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip70_146)">
+		<path id="tel-icon" d="M14 9C14 10.12 12 11.25 11.33 12.37C10.66 13.5 12 14.62 13.33 15.75C13.85 16.18 16 18 17.33 17.43C18.66 16.87 20 15.18 21.33 15.18C22 15.18 28 17.43 28 18C28 20.25 26 21.93 24 22.5C22 23.06 20.66 23.06 18 22.5C15.33 21.93 13.33 21.37 10 18.56C6.66 15.75 6 14.06 5.33 11.81C4.66 9.56 4.66 8.43 5.33 6.75C6 5.06 8 3.37 10.66 3.37C11.33 3.37 14 8.43 14 9Z" stroke="#000000" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
+	</g>
+</svg>

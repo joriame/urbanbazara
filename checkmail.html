@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/forgpass.css" />
+    <title>Регистрация</title>
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">urbanbazara</h1>
+        <!-- Навигационное меню -->
+        <nav class="menu">
+          <a href="index.html" class="menu-link">Главная</a>
+          <a href="shop.html" class="menu-link">Каталог</a>
+          <a href="about.html" class="menu-link">О нас</a>
+          <a href="contacts.html" class="menu-link">Контакты</a>
+        </nav>
+
+        <!-- Иконки -->
+        <div class="icons-menu">
+          <!-- Иконка избранное -->
+          <a href="favourite.html" class="icon-link">
+            <img src="assets/icons/favourite.svg" alt="Избранное"
+          /></a>
+          <!-- Иконка корзина -->
+          <a href="basket.html" class="icon-link">
+            <img src="assets/icons/basket.svg" alt="Корзина"
+          /></a>
+          <!-- Иконка профиль -->
+          <a href="auth.html" class="icon-link">
+            <img src="assets/icons/profile.svg" alt="Профиль"
+          /></a>
+        </div>
+        <!-- Бургер меню -->
+        <div class="burger" id="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+    <nav class="menu-mobile" id="menu-mobile">
+      <a href="index.html" class="menu-mobile-link">Главная</a>
+      <a href="shop.html" class="menu-mobile-link">Каталог</a>
+      <a href="about.html" class="menu-mobile-link">О нас</a>
+      <a href="contacts.html" class="menu-mobile-link">Контакты</a>
+      <a href="favourite.html" class="menu-mobile-link">Избранное</a>
+      <a href="basket.html" class="menu-mobile-link">Корзина</a>
+      <a href="auth.html" class="menu-mobile-link">Профиль</a>
+    </nav>
+    <!-- Блок регистрации -->
+    <section class="auth">
+      <h1 class="auth-title">Сброс пароля</h1>
+      <p class="no-account">
+        Введите свой адрес электронной почты, чтобы получить ссылку на сброс пароля
+      </p>
+      <form class="auth-form">
+        <div class="circle-message">
+          <img src="/assets/icons/message-cion.svg" alt="message">
+        </div>
+        <p class="check-mail">Проверьте свою электронную
+          почту</p>
+          <p class="to-mail">Мы отправили инструкции по сбросу пароля
+            по адресу: <br>
+           you@example.com
+           </p>
+           <p class="where-message">Если вы не видите электронное письмо, 
+            проверьте папку со спамом или повторите попытку, указав другое письмо.</p>
+        <div class="to-auth">
+          <img src="/assets/icons/mingcute_arrow-up-line.svg" alt="">
+          <a class="to-auth-link" href="auth.html">Вернуться к входу</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h3 class="footer-logo-head">URBANBAZARA</h3>
+          <p class="footer-logo-slogan">
+            Ваш лучший магазин стильных и качественных курток.
+          </p>
+        </div>
+
+        <div class="fast-links">
+          <h3 class="fast-link-head">Быстрые ссылки</h3>
+          <a  draggable="false" class="fast-link" href="index.html">Главная</a>
+          <a  draggable="false" class="fast-link" href="shop.html">Магазин</a>
+          <a  draggable="false" class="fast-link" href="about.html">О нас</a>
+          <a  draggable="false" class="fast-link" href="contacts.html">Контакты</a>
+        </div>
+
+        <div class="services-links">
+          <h3 class="service-link-head">Обслуживание</h3>
+          <a  draggable="false" class="service-link" href="shipping.html">Информация о доставке</a>
+          <a  draggable="false" class="service-link" href="return.html">Возврат</a>
+          <a  draggable="false" class="service-link" href="size-guide.html">Руководство по размерам</a>
+        </div>
+
+        <div class="social-links">
+          <h3 class="social-link-head">Мы в соцсетях</h3>
+          <div class="social-icons">
+            <a  draggable="false" href="https://facebook.com" class="social-link">
+              <img  draggable="false" src="assets/icons/facebook.svg" alt="facebook" />
+            </a>
+            <a  draggable="false" href="https://x.com" class="social-link">
+              <img  draggable="false" src="assets/icons/twitter.svg" alt="twitter" />
+            </a>
+            <a  draggable="false" href="https://instagram.com" class="social-link">
+              <img  draggable="false" src="assets/icons/mdi_instagram.svg" alt="instagram" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 URBANBAZARA. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

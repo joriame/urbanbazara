@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles/favourite.css" />
+  <title>Избранное</title>
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">urbanbazara</h1>
+      <!-- Навигационное меню -->
+      <nav class="menu">
+        <a draggable="false" href="index.html" class="menu-link">Главная</a>
+        <a draggable="false" href="shop.html" class="menu-link">Каталог</a>
+        <a draggable="false" href="about.html" class="menu-link">О нас</a>
+        <a draggable="false" href="contacts.html" class="menu-link">Контакты</a>
+      </nav>
+
+      <!-- Иконки -->
+      <div class="icons-menu">
+        <!-- Иконка избранное -->
+        <a draggable="false" href="favourite.html" class="icon-link">
+          <img draggable="false" src="assets/icons/favourite.svg" alt="Избранное" /></a>
+        <!-- Иконка корзина -->
+        <a draggable="false" href="basket.html" class="icon-link">
+          <img draggable="false" src="assets/icons/basket.svg" alt="Корзина" /></a>
+        <!-- Иконка профиль -->
+        <a draggable="false" href="auth.html" class="icon-link">
+          <img draggable="false" src="assets/icons/profile.svg" alt="Профиль" /></a>
+      </div>
+      <!-- Бургер меню -->
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <nav class="menu-mobile" id="menu-mobile">
+    <a href="index.html" class="menu-mobile-link">Главная</a>
+    <a href="shop.html" class="menu-mobile-link">Каталог</a>
+    <a href="about.html" class="menu-mobile-link">О нас</a>
+    <a href="contacts.html" class="menu-mobile-link">Контакты</a>
+    <a href="favourite.html" class="menu-mobile-link">Избранное</a>
+    <a href="basket.html" class="menu-mobile-link">Корзина</a>
+    <a href="auth.html" class="menu-mobile-link">Профиль</a>
+  </nav>
+
+
+
+  <!-- Новые поступлеия -->
+
+  <section class="arrivals">
+    <div class="arrivals-container">
+      <h1 class="arrivals-title">Избранное</h1>
+      <div class="cards-container">
+        <div class="arrivals-card">
+          <svg class="favourite" width="30" height="30" viewBox="0 0 30 30" fill="red" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.462 6.79975C25.6077 7.95012 26.251 9.50757 26.251 11.1311C26.251 12.7547 25.6077 14.3122 24.462 15.4625L15 25.0001L5.53801 15.4619C4.68694 14.6053 4.10748 13.5167 3.87217 12.3323C3.63687 11.1479 3.75617 9.92039 4.21516 8.80349C4.67414 7.68658 5.4524 6.72989 6.45251 6.05318C7.45261 5.37648 8.63012 5.00983 9.83761 4.99915C11.4521 5.0085 12.9976 5.65548 14.1372 6.79915C14.4699 7.1285 14.7597 7.49841 15 7.90015C15.2403 7.49862 15.5302 7.12892 15.8628 6.79975C16.4244 6.22966 17.0938 5.77695 17.832 5.46794C18.5702 5.15893 19.3625 4.9998 20.1627 4.9998C20.963 4.9998 21.7552 5.15893 22.4934 5.46794C23.2316 5.77695 23.9004 6.22966 24.462 6.79975Z" stroke="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          <div class="image-slider">
+            <img class="card-image active" src="assets/images/image1-card1.jpg" alt="1" draggable="false" />
+            <img class="card-image" src="assets/images/image2-card1.webp" alt="2" draggable="false" />
+            <img class="card-image" src="assets/images/image3-card1.webp" alt="3" draggable="false" />
+            <img class="card-image" src="assets/images/image4-card1.jpg" alt="4" draggable="false" />
+          </div>
+          <div class="card-txt-price">
+            <h1 class="card-title">Аляска N-2B Altitude</h1>
+            <p class="card-price">$587.99</p>
+          </div>
+          <button id="cartButton" class="cart-button"> <img src="/assets/icons/lets-icons_basket-alt-3-light.svg"
+              alt="basket"> В корзину</button>
+        </div>
+        <div class="arrivals-card">
+          <svg class="favourite" width="30" height="30" viewBox="0 0 30 30" fill="red" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.462 6.79975C25.6077 7.95012 26.251 9.50757 26.251 11.1311C26.251 12.7547 25.6077 14.3122 24.462 15.4625L15 25.0001L5.53801 15.4619C4.68694 14.6053 4.10748 13.5167 3.87217 12.3323C3.63687 11.1479 3.75617 9.92039 4.21516 8.80349C4.67414 7.68658 5.4524 6.72989 6.45251 6.05318C7.45261 5.37648 8.63012 5.00983 9.83761 4.99915C11.4521 5.0085 12.9976 5.65548 14.1372 6.79915C14.4699 7.1285 14.7597 7.49841 15 7.90015C15.2403 7.49862 15.5302 7.12892 15.8628 6.79975C16.4244 6.22966 17.0938 5.77695 17.832 5.46794C18.5702 5.15893 19.3625 4.9998 20.1627 4.9998C20.963 4.9998 21.7552 5.15893 22.4934 5.46794C23.2316 5.77695 23.9004 6.22966 24.462 6.79975Z" stroke="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          <div class="image-slider">
+            <img class="card-image active" src="assets/images/image1-card2.jpg" alt="1" draggable="false" />
+            <img class="card-image" src="assets/images/image2-card2.webp" alt="2" draggable="false" />
+            <img class="card-image" src="assets/images/image3-card2.webp" alt="3" draggable="false" />
+            <img class="card-image" src="assets/images/image4-card2.webp" alt="4" draggable="false" />
+          </div>
+          <div class="card-txt-price">
+            <h1 class="card-title">Бомбер Alpha Industries</h1>
+            <p class="card-price">$299.99</p>
+          </div>
+          <button id="cartButton" class="cart-button"> <img src="/assets/icons/lets-icons_basket-alt-3-light.svg"
+              alt="">В корзину</button>
+        </div>
+        <div class="arrivals-card">
+          <svg class="favourite" width="30" height="30" viewBox="0 0 30 30" fill="red" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.462 6.79975C25.6077 7.95012 26.251 9.50757 26.251 11.1311C26.251 12.7547 25.6077 14.3122 24.462 15.4625L15 25.0001L5.53801 15.4619C4.68694 14.6053 4.10748 13.5167 3.87217 12.3323C3.63687 11.1479 3.75617 9.92039 4.21516 8.80349C4.67414 7.68658 5.4524 6.72989 6.45251 6.05318C7.45261 5.37648 8.63012 5.00983 9.83761 4.99915C11.4521 5.0085 12.9976 5.65548 14.1372 6.79915C14.4699 7.1285 14.7597 7.49841 15 7.90015C15.2403 7.49862 15.5302 7.12892 15.8628 6.79975C16.4244 6.22966 17.0938 5.77695 17.832 5.46794C18.5702 5.15893 19.3625 4.9998 20.1627 4.9998C20.963 4.9998 21.7552 5.15893 22.4934 5.46794C23.2316 5.77695 23.9004 6.22966 24.462 6.79975Z" stroke="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          <div class="image-slider">
+            <img class="card-image active" src="assets/images/image1-card3.jpg" alt="1" draggable="false" />
+            <img class="card-image" src="assets/images/image2-card3.webp" alt="2" draggable="false" />
+            <img class="card-image" src="assets/images/image3-card3.jpg" alt="3" draggable="false" />
+            <img class="card-image" src="assets/images/image4-card3.jpg" alt="4" draggable="false" />
+          </div>
+          <div class="card-txt-price">
+            <h1 class="card-title">Куртка M-43 Mod Field Jacket</h1>
+            <p class="card-price">$299.99</p>
+          </div>
+          <button id="cartButton" class="cart-button"> <img src="/assets/icons/lets-icons_basket-alt-3-light.svg"
+              alt="">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3 class="footer-logo-head">URBANBAZARA</h3>
+        <p class="footer-logo-slogan">
+          Ваш лучший магазин стильных и качественных курток.
+        </p>
+      </div>
+
+      <div class="fast-links">
+        <h3 class="fast-link-head">Быстрые ссылки</h3>
+        <a draggable="false" class="fast-link" href="index.html">Главная</a>
+        <a draggable="false" class="fast-link" href="shop.html">Магазин</a>
+        <a draggable="false" class="fast-link" href="about.html">О нас</a>
+        <a draggable="false" class="fast-link" href="contacts.html">Контакты</a>
+      </div>
+
+      <div class="services-links">
+        <h3 class="service-link-head">Обслуживание</h3>
+        <a draggable="false" class="service-link" href="shipping.html">Информация о доставке</a>
+        <a draggable="false" class="service-link" href="return.html">Возврат</a>
+        <a draggable="false" class="service-link" href="size-guide.html">Руководство по размерам</a>
+      </div>
+
+      <div class="social-links">
+        <h3 class="social-link-head">Мы в соцсетях</h3>
+        <div class="social-icons">
+          <a draggable="false" href="https://facebook.com" class="social-link">
+            <img draggable="false" src="assets/icons/facebook.svg" alt="facebook" />
+          </a>
+          <a draggable="false" href="https://x.com" class="social-link">
+            <img draggable="false" src="assets/icons/twitter.svg" alt="twitter" />
+          </a>
+          <a draggable="false" href="https://instagram.com" class="social-link">
+            <img draggable="false" src="assets/icons/mdi_instagram.svg" alt="instagram" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 URBANBAZARA. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

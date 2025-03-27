@@ -1,0 +1,561 @@
+@font-face {
+  font-family: "Playfair";
+  src: url("/assets/fonts/PlayfairDisplay.ttf");
+}
+html {
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafc;
+  overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  height: 100%;
+}
+body.loaded {
+  opacity: 1;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  min-height: 80px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  max-width: 1440px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: black;
+  font-family: "Playfair";
+  font-weight: 400;
+}
+
+.menu {
+  display: flex;
+  gap: 50px;
+}
+
+.menu-link {
+  font-size: 18px;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.menu-link:hover::before {
+  left: 0;
+  right: 0;
+  transition: right 0.4s;
+}
+
+.menu-link::before {
+  background: rgb(0, 0, 0, 0.702);
+  bottom: 0;
+  height: 1px;
+  content: "";
+  left: 100%;
+  right: 100%;
+  transition: right 0s 0.4s, left 0.4s;
+  position: absolute;
+}
+
+.icons-menu {
+  display: flex;
+  gap: 16px;
+}
+
+.icon-link img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.icon-link:hover img {
+  transform: scale(1.1);
+}
+
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.981);
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-mobile.active {
+  display: flex;
+}
+
+.menu-mobile-link {
+  font-size: 18px;
+  font-weight: 300;
+  padding: 10px 0;
+  text-align: center;
+  display: block;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger div {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  transition: 0.3s ease;
+}
+
+.burger.active div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.active div:nth-child(2) {
+  opacity: 0;
+}
+.burger.active div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ----- АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ----- */
+@media (max-width: 1024px) {
+  .menu {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.981);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .icons-menu {
+    display: none;
+  }
+}
+
+/* Стилизация блока авторизации */
+.auth {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 266px - 80px);
+  position: relative;
+  margin: 50px 0px;
+}
+.auth-title {
+  font-size: 35px;
+  margin-bottom: 22px;
+}
+.no-account {
+  font-size: 20px;
+  margin-bottom: 34px;
+  white-space: nowrap;
+}
+.no-account span {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+.no-account span:hover{
+  text-decoration: none;
+}
+.auth-form {
+  box-sizing: border-box;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: max-content;
+  padding: 40px 40px;
+}
+.name-surname {
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 21px;
+}
+.name-title,
+.surname-title {
+  max-width: 178px;
+  width: 100%;
+}
+.name-input,
+.surname-input {
+  max-width: 178px;
+  width: 100%;
+  height: 31px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 10px;
+  font-size: 16px;
+  position: relative;
+  padding-left: 40px;
+}
+.surname-icon, .name-icon{
+  position: absolute;
+  margin-top: 23px;
+  margin-left: 10px;
+  z-index: 1;
+}
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  font-size: 16px;
+  gap: 5px;
+}
+.email {
+  max-width: 420px;
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid rgb(210, 210, 210);
+  font-size: 16px;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 21px;
+  margin-top: 5px;
+}
+.email::placeholder {
+  color: rgb(210, 210, 210);
+}
+.email-img {
+  position: absolute;
+  margin-top: 9px;
+  margin-left: 10px;
+  z-index: 1;
+}
+.password {
+  max-width: 420px;
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid rgb(210, 210, 210);
+  font-size: 16px;
+  padding-left: 40px;
+  margin-top: 5px;
+}
+.pass-img {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+.checkbox-and-forgetpass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 23px;
+  margin-bottom: 50px;
+}
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.remember-me {
+  font-size: 16px;
+  white-space: nowrap;
+}
+.forgetpass {
+  font-size: 16px;
+  white-space: nowrap;
+}
+.auth-btn {
+  max-width: 420px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: rgb(88, 88, 88);
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 32px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.auth-btn:hover {
+  background: rgb(57, 57, 57);
+}
+.continue-this {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.continue-text {
+  font-size: 16px;
+  white-space: nowrap;
+}
+.line {
+  max-width: 123px;
+  width: 100%;
+  height: 1px;
+  background: rgb(217, 217, 217);
+}
+.google-facebook {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.google {
+  max-width: 196px;
+  width: 100%;
+  height: 31px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid rgb(217, 217, 217);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+.google:hover {
+  border: 1px solid rgb(148, 148, 148);
+}
+.blue {
+  color: #4e8df6;
+}
+.red {
+  color: #ed4f3d;
+}
+.yellow {
+  color: #fabf19;
+}
+.green {
+  color: #3fac63;
+}
+.facebook {
+  max-width: 196px;
+  width: 100%;
+  height: 31px;
+  text-align: center;
+  box-sizing: border-box;
+  background: rgb(26, 96, 200);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  transition: 0.3s ease;
+}
+.facebook:hover{
+  background: rgb(15, 77, 170);
+}
+
+@media (max-width: 480px) {
+  .auth {
+    height: auto;
+    padding: 40px 15px;
+  }
+  .auth-title {
+    font-size: 28px;
+  }
+  .no-account {
+    font-size: 18px;
+  }
+  .auth-form {
+    padding: 30px 20px;
+  }
+  .name-surname{
+    flex-direction: column;
+  }
+  .name-title,
+.surname-title {
+  max-width: 100%;
+}
+.name-title{
+  margin-bottom: 21px;
+}
+.name-input,
+.surname-input {
+  max-width: 100%;
+}
+  .auth-btn {
+    font-size: 16px;
+    height: 40px;
+    margin-top: 0;
+  }
+  .google-facebook {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .checkbox-and-forgetpass {
+    margin-bottom: 10px;
+  }
+  .remember-me {
+    font-size: 12px;
+  }
+  .google {
+    max-width: 100%;
+  }
+  .facebook {
+    max-width: 100%;
+  }
+}
+
+/* Подвал сайта */
+.footer {
+  background: linear-gradient(90deg, rgb(58, 58, 58), rgb(0, 0, 0) 100%);
+  padding: 30px 0;
+  width: 100%;
+  min-height: 266px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1440px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.footer-logo,
+.fast-links,
+.services-links,
+.social-links {
+  max-width: 270px;
+  width: 100%;
+}
+.footer-logo-head{
+  font-family: "Playfair";
+}
+.footer-logo-head,
+.fast-link-head,
+.service-link-head,
+.social-link-head {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.footer-logo-slogan,
+.fast-link,
+.service-link {
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+  border-top: 1px solid #555;
+  padding-top: 10px;
+}
+.footer-bottom p {
+  color: #fff;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+    gap: 20px;
+    flex-direction: column-reverse;
+  }
+  .service-link {
+    text-align: left;
+  }
+  .service-link-head {
+    text-align: left;
+  }
+
+  .footer-logo {
+    display: none;
+  }
+
+  .social-link-head {
+    display: none;
+  }
+  .fast-links {
+    display: none;
+  }
+}
