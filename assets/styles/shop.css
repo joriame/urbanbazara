@@ -52,6 +52,7 @@ body {
   color: black;
   font-family: "Playfair";
   font-weight: 400;
+  cursor: pointer;
 }
 
 .menu {
@@ -221,7 +222,6 @@ body {
 }
 .search-block {
   display: flex;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -273,7 +273,11 @@ select{
   font-weight: 400;
   background-color:transparent;
 }
-
+.product-filter-block{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .filter-sort-block-none{
   display: none;
   justify-content: space-between;

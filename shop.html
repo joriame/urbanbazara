@@ -12,7 +12,7 @@
   <!-- Шапка сайта -->
   <header class="header">
     <div class="container">
-      <h1 class="logo">urbanbazara</h1>
+      <h1 class="logo" onclick="window.location.href='index.html'">urbanbazara</h1>
       <!-- Навигационное меню -->
       <nav class="menu">
         <a draggable="false" href="index.html" class="menu-link">Главная</a>
@@ -417,7 +417,42 @@
       </div>
     </div>
   </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.querySelector(".search-input");
+      const cards = document.querySelectorAll(".arrivals-card");
+      const container = document.querySelector('.cards-container');
 
+      function updateContainerLayout() {
+        const visibleCards = document.querySelectorAll('.arrivals-card:not([style*="display: none"])');
+
+        if (visibleCards.length <= 2) {
+          container.style.justifyContent = 'start';
+        } else {
+          container.style.justifyContent = 'space-between';
+          container.style.gap = '50px';
+        }
+      }
+
+      searchInput.addEventListener("input", () => {
+        const searchValue = searchInput.value.toLowerCase();
+
+        cards.forEach((card) => {
+          const title = card.querySelector(".card-title").textContent.toLowerCase();
+          if (title.includes(searchValue)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        updateContainerLayout();
+      });
+
+    });
+
+
+  </script>
 
 
 

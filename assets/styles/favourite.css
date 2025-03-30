@@ -52,6 +52,7 @@ body {
   color: black;
   font-family: "Playfair";
   font-weight: 400;
+  cursor: pointer;
 }
 
 .menu {
