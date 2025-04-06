@@ -159,19 +159,53 @@
             <button class="count-plus"><img src="assets/icons/ic_baseline-plus.svg" alt="plus"></button>
           </div>
         </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const minusBtn = document.querySelector(".count-minus");
+            const plusBtn = document.querySelector(".count-plus");
+            const countText = document.querySelector(".count-btn-text");
+
+            let count = 1;
+
+            plusBtn.addEventListener("click", () => {
+              count++;
+              countText.textContent = count;
+            });
+
+            minusBtn.addEventListener("click", () => {
+              if (count > 1) {
+                count--;
+                countText.textContent = count;
+              }
+            });
+          });
+        </script>
         <div class="btns">
           <button class="to-cart"><img src="assets/icons/lets-icons_basket-alt-3-light.svg" alt="">В
             корзину</button>
           <button class="to-favourite"><img src="assets/icons/btn-card-love.svg" alt="favourite">В
             избранное</button>
-          <script>
-            document.querySelector('.to-favourite').addEventListener('click', function () {
-              let icon = this.querySelector('img');
-
-              this.textContent = this.textContent.trim() === 'В избранное' ? 'В избранном' : 'В избранное';
-              this.prepend(icon);
-            });</script>
         </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const cartBtn = document.querySelector(".to-cart");
+            const favBtn = document.querySelector(".to-favourite");
+
+            cartBtn.addEventListener("click", () => {
+              const isAdded = cartBtn.textContent.trim() === "Добавлено";
+              cartBtn.innerHTML = isAdded
+                ? '<img src="assets/icons/lets-icons_basket-alt-3-light.svg" alt="">В корзину'
+                : '<img src="assets/icons/lets-icons_basket-alt-3-light.svg" alt="">Добавлено';
+            });
+
+            favBtn.addEventListener("click", () => {
+              const isAdded = favBtn.textContent.trim() === "В избранном";
+              favBtn.innerHTML = isAdded
+                ? '<img src="assets/icons/btn-card-love.svg" alt="favourite">В избранное'
+                : '<img src="assets/icons/btn-card-love.svg" alt="favourite">В избранном';
+            });
+          });
+        </script>
         <div class="line"></div>
         <div class="duty-container">
           <div class="delivery-block">
