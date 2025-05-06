@@ -24,7 +24,7 @@
 }
 
 @font-face {
-  font-family: var(--font-accent);
+  font-family: "Playfair";
   src: url("../fonts/PlayfairDisplay.ttf");
 }
 
@@ -386,24 +386,27 @@ body {
   color: var(--color-white);
 }
 
+/* Адаптивные стили */
 @media (max-width: 768px) {
   .footer-container {
     text-align: center;
     gap: 20px;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
-
   .service-link {
     text-align: left;
   }
-
   .service-link-head {
     text-align: left;
   }
+  .footer-logo {
+    text-align: left;
+  }
 
-  .footer-logo,
-  .social-link-head,
+  .social-link-head {
+    text-align: left;
+  }
   .fast-links {
-    display: none;
+    text-align: left;
   }
 }

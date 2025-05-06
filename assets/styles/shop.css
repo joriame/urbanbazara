@@ -512,7 +512,7 @@ select{
   .footer-container {
     text-align: center;
     gap: 20px;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   .service-link {
     text-align: left;
@@ -520,15 +520,14 @@ select{
   .service-link-head {
     text-align: left;
   }
-
   .footer-logo {
-    display: none;
+    text-align: left;
   }
 
   .social-link-head {
-    display: none;
+    text-align: left;
   }
   .fast-links {
-    display: none;
+    text-align: left;
   }
 }
